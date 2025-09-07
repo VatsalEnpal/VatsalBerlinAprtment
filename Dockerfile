@@ -30,7 +30,7 @@ RUN mkdir -p /db /conf \
   && ln -s /conf /fredy/conf
 
 # Ensure config.json exists so backend doesn't 500
-RUN test -f /conf/config.json || echo '{}' > /conf/config.json
+RUN echo '{"jobs":[],"settings":{"processingInterval":60}}' > /conf/config.json
 
 EXPOSE 9998
 
