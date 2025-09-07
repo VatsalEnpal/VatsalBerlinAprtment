@@ -29,9 +29,6 @@ RUN mkdir -p /db /conf \
   && ln -s /db /fredy/db \
   && ln -s /conf /fredy/conf
 
-# Ensure config.json exists so backend doesn't 500
-RUN echo '{"jobs":[],"settings":{"processingInterval":60}}' > /conf/config.json
-
 EXPOSE 9998
 
 # Start application using PM2 runtime
